@@ -14,3 +14,7 @@
 Route::get('/', function () {
     return view('welcome');
 });
+
+Route::get('adduserform','Acontroller@show');
+
+Route::post('adduser','Acontroller@add');
