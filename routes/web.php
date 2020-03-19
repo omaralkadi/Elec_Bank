@@ -12,7 +12,7 @@
 */
 
 Route::get('/', function () {
-    return view('masterpage');
+    return view('welcome');
 });
 
 Route::get('/updateuser', function () {
@@ -31,12 +31,3 @@ Route::get('adduserform','Acontroller@show');
 Route::post('adduser','Acontroller@add');
 
 Route::get('showusers','Acontroller@showusers');
-
-
-
-
-
-
-
-
-
