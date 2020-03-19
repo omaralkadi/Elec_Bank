@@ -18,3 +18,5 @@ Route::get('/', function () {
 Route::get('adduserform','Acontroller@show');
 
 Route::post('adduser','Acontroller@add');
+
+Route::get('showusers','Acontroller@showusers');

@@ -26,4 +26,12 @@ class Acontroller extends Controller
         $user->save();
         return back();
     }
+
+    public function showusers(request $request)
+    {
+ 
+        $users=DB::table('users')->get();         
+        return view('showusers',compact('users'));
+    }
+
 }
