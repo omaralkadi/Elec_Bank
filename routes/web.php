@@ -12,11 +12,31 @@
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('masterpage');
 });
+
+Route::get('/updateuser', function () {
+    return view('updateuser');
+});
+
+Route::get('/submit', function ($id) {
+    return view('updateuser');
+});
+
+Route::get('submit/{id}','UpdateData@update');
+Route::post('submit','UpdateData@update');
 
 Route::get('adduserform','Acontroller@show');
 
 Route::post('adduser','Acontroller@add');
 
 Route::get('showusers','Acontroller@showusers');
+
+
+
+
+
+
+
+
+

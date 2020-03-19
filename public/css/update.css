@@ -1,0 +1,48 @@
+*{
+    padding: 0px;
+    margin: 0px;
+    font-family:"Roboto","sans-serif"
+}
+
+body{
+    background-color:lightsteelblue;
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    height: 100vh;
+    
+    
+}
+label
+{
+	height: 30px;
+	position: relative;
+	top: 100px;
+	left: 50px;
+	display: block;
+	padding: 0px;
+    margin: 0px;
+    font-family: "Roboto","sans-serif";
+}
+
+input
+{
+	position: relative;
+	top: 60px;
+	left: 150px;
+	height: 30px;
+    width: 300px;
+	display: block;
+}
+
+button
+{
+	height: 30px;
+	width: 300px;
+	position: absolute;
+    top: 485px;
+	left: 150px;
+    color: white;
+    background-color: black;
+
+}
