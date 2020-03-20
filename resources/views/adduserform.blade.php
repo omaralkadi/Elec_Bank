@@ -1,4 +1,5 @@
-
+@extends("layouts.app")
+@section("content")
         <div style='margin-left:100px'> 
 
         <form method="POST" style='margin-top:100px' action="adduser">
@@ -52,3 +53,4 @@
          
         
     </form>
+@endsection

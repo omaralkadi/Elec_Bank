@@ -1,5 +1,6 @@
 
-     
+    @extends("layouts.app")
+    @section("content")
 
     <table border = "1" style='margin-top:50px;margin-left:300px;text;width:800px'>
        <tr>
@@ -20,3 +21,4 @@
        </tr>
        @endforeach
        </table>
+@endsection

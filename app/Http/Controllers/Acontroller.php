@@ -4,13 +4,19 @@ namespace App\Http\Controllers;
 use DB;
 use App\users;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Hash;
 
 class Acontroller extends Controller
 {
 
+    public function __construct()
+    {
+        $this->middleware('auth');
+    }
+
     public function show()
     {
-        
         return view('adduserform');
     }
 
@@ -21,7 +27,7 @@ class Acontroller extends Controller
         $user->lname=$request->lastname;
         $user->username=$request->username;
         $user->email=$request->email;
-        $user->password=$request->password;
+        $user->password=Hash::make($request->password);
         #$user->group_id='0'; by default
         $user->save();
         return back();

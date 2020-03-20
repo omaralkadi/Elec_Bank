@@ -1,5 +1,5 @@
 <?php
-
+use Illuminate\Support\Facades\Auth;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -12,15 +12,27 @@
 */
 
 Route::get('/', function () {
-    return view('masterpage');
+    return redirect('login');
 });
 
 Route::get('/updateuser', function () {
-    return view('updateuser');
-});
+    if (!Auth::guest() && Auth::user()->group_id ==1)
+        return view('updateuser');
+    else
+    {
+        return redirect("home");
+    }
+
+    });
 
 Route::get('/submit', function ($id) {
-    return view('updateuser');
+    if (!Auth::guest() && Auth::user()->group_id ==1)
+        return view('updateuser');
+    else
+    {
+        return redirect("home");
+    }
+
 });
 
 Route::get('submit/{id}','UpdateData@update');
@@ -31,3 +43,6 @@ Route::get('adduserform','Acontroller@show');
 Route::post('adduser','Acontroller@add');
 
 Route::get('showusers','Acontroller@showusers');
+
+Auth::routes(['register' =>false]);
+Route::get('/home', 'HomeController@index')->name('home');
