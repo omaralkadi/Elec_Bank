@@ -46,3 +46,4 @@ Route::get('showusers','Acontroller@showusers');
 
 Auth::routes(['register' =>false]);
 Route::get('/home', 'HomeController@index')->name('home');
+Route::get('feedback','Feedback@get_feedback');

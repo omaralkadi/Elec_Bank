@@ -770,3 +770,15 @@
 #52 C:\\Windows\\System32\\Elec_Bank\\server.php(21): require_once('C:\\\\Windows\\\\Syst...')
 #53 {main}
 "} 
+[2020-03-20 21:42:29] local.ERROR: Declaration of Symfony\Component\Translation\TranslatorInterface::setLocale($locale) must be compatible with Symfony\Contracts\Translation\LocaleAwareInterface::setLocale(string $locale) {"exception":"[object] (Symfony\\Component\\Debug\\Exception\\FatalErrorException(code: 64): Declaration of Symfony\\Component\\Translation\\TranslatorInterface::setLocale($locale) must be compatible with Symfony\\Contracts\\Translation\\LocaleAwareInterface::setLocale(string $locale) at C:\\xampp\\htdocs\\EBank\\Elec_Bank\\vendor\\symfony\\translation\\TranslatorInterface.php:24)
+[stacktrace]
+#0 {main}
+"} 
+[2020-03-20 21:43:14] local.ERROR: Declaration of Symfony\Component\Translation\TranslatorInterface::setLocale($locale) must be compatible with Symfony\Contracts\Translation\LocaleAwareInterface::setLocale(string $locale) {"exception":"[object] (Symfony\\Component\\Debug\\Exception\\FatalErrorException(code: 64): Declaration of Symfony\\Component\\Translation\\TranslatorInterface::setLocale($locale) must be compatible with Symfony\\Contracts\\Translation\\LocaleAwareInterface::setLocale(string $locale) at C:\\xampp\\htdocs\\EBank\\Elec_Bank\\vendor\\symfony\\translation\\TranslatorInterface.php:24)
+[stacktrace]
+#0 {main}
+"} 
+[2020-03-20 21:50:35] local.ERROR: Declaration of Symfony\Component\Translation\TranslatorInterface::setLocale($locale) must be compatible with Symfony\Contracts\Translation\LocaleAwareInterface::setLocale(string $locale) {"exception":"[object] (Symfony\\Component\\Debug\\Exception\\FatalErrorException(code: 64): Declaration of Symfony\\Component\\Translation\\TranslatorInterface::setLocale($locale) must be compatible with Symfony\\Contracts\\Translation\\LocaleAwareInterface::setLocale(string $locale) at C:\\xampp\\htdocs\\EBank\\Elec_Bank\\vendor\\symfony\\translation\\TranslatorInterface.php:24)
+[stacktrace]
+#0 {main}
+"} 
