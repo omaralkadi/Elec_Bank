@@ -43,6 +43,7 @@ Route::get('adduserform','Acontroller@show');
 Route::post('adduser','Acontroller@add');
 
 Route::get('showusers','Acontroller@showusers');
+Route::get('/deleteUser/{id}','Acontroller@deleteUser');
 
 Auth::routes(['register' =>false]);
 Route::get('/home', 'HomeController@index')->name('home');

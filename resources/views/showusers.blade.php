@@ -18,6 +18,7 @@
        <td>{{ $user->fname }}</td>
        <td>{{ $user->lname }}</td>
        <td>{{ $user->email }}</td>
+       <td> <a href='/deleteUser/{{ $user->id }}'>Delete</a></td>
        </tr>
        @endforeach
        </table>
