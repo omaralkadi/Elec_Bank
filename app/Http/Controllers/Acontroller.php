@@ -12,7 +12,7 @@ class Acontroller extends Controller
 
     public function __construct()
     {
-        $this->middleware('auth');
+       #$this->middleware('auth');
     }
 
     public function show()
@@ -39,5 +39,11 @@ class Acontroller extends Controller
         $users=DB::table('users')->get();         
         return view('showusers',compact('users'));
     }
+    
+    public static function deleteUser($id){
+
+        DB::table('users')->where('id', '=', $id)->delete();
+        return back();
+      }
 
 }
