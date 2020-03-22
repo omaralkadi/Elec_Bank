@@ -49,7 +49,7 @@
                         @else
 
                         @if(!Auth::guest() && Auth::user()->group_id ==1 )
-                        <!-- User Mangement -->      
+                        <!-- User Mangement -->
                         <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
                                      Customer Management  <span class="caret"></span>
                                 </a>
@@ -58,7 +58,7 @@
                                 <div class="dropdown-menu dropdown-menu-right" style="position:absolute;left:850px;width:200px"aria-labelledby="navbarDropdown">
                                     <a class="dropdown-item" href="#">
                                     </a>
-                                    
+
 
                                 <a id="navbarDropdown" class="nav-link " href="adduserform" role="button" aria-haspopup="true" aria-expanded="false" v-pre>
                                   New Account <span class="caret"></span>
@@ -72,14 +72,14 @@
                                 <a id="navbarDropdown" class="nav-link " href="#" role="button"  aria-haspopup="true" aria-expanded="false" v-pre>
                                   Transfer <span class="caret"></span>
                                 </a>
-                                </div> 
-                                <a id="navbarDropdown" class="nav-link " href="#" role="button"  aria-haspopup="true" aria-expanded="false" v-pre>
+                                </div>
+                                <a id="navbarDropdown" class="nav-link " href="feedback" role="button"  aria-haspopup="true" aria-expanded="false" v-pre>
                                   Feedback <span class="caret"></span>
-                                </a> 
+                                </a>
                             @endif
                             <li class="nav-item dropdown">
 
-                             
+
                                 <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="false" aria-expanded="false" v-pre>
                                     {{ Auth::user()->fname ." " . Auth::user()->lname }} <span class="caret"></span>
                                 </a>
