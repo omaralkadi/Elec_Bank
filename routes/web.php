@@ -15,7 +15,7 @@ Route::get('/', function () {
     return redirect('login');
 });
 
-Route::get('/updateuser', function () {
+Route::GET('updateuser', function () {
     if (!Auth::guest() && Auth::user()->group_id ==1)
         return view('updateuser');
     else
@@ -24,19 +24,8 @@ Route::get('/updateuser', function () {
     }
 
     });
+Route::post('updatebut','UpdateData@update');
 
-Route::get('/submit', function ($id) {
-    if (!Auth::guest() && Auth::user()->group_id ==1)
-        return view('updateuser');
-    else
-    {
-        return redirect("home");
-    }
-
-});
-
-Route::get('submit/{id}','UpdateData@update');
-Route::post('submit','UpdateData@update');
 
 Route::get('adduserform','Acontroller@show');
 
