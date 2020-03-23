@@ -47,7 +47,7 @@ class CreateUsersTable extends Migration
                 "username" =>"omartarek",
                 "email" =>"user@gmail.com",
                 "password"=>Hash::make(123456),
-                "group_id" => 1
+                "group_id" => 0
 
             )
         );

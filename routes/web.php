@@ -34,6 +34,8 @@ Route::post('adduser','Acontroller@add');
 Route::get('showusers','Acontroller@showusers');
 Route::get('/deleteUser/{id}','Acontroller@deleteUser');
 
+Route::get('feedback','Feedback@get_feedback');
+
 Auth::routes(['register' =>false]);
 Route::get('/home', 'HomeController@index')->name('home');
-Route::get('feedback','Feedback@get_feedback');
+
