@@ -20,7 +20,7 @@ class UpdateData extends Controller
         $user->password = Hash::make($request->input('pass'));
         $user->email    = $request->input('email');
         $user->update();
-		//echo '<script type="text/javascript">alert("Changes saved")</script>';
+		echo '<script type="text/javascript">alert("Changes saved")</script>';
         return redirect('/updateuser')->with('sucess','User Info Updated');
     	}
     	

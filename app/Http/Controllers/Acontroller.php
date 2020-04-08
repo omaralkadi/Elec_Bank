@@ -46,4 +46,19 @@ class Acontroller extends Controller
         return back();
       }
 
+      public static function BanUser($id){
+
+        DB::table('users')->where('id', '=', $id)->update(['users.isBan'=> '1']);
+        return back();
+      }
+
+      public static function UnBanUser($id){
+
+        DB::table('users')->where('id', '=', $id)->update(['users.isBan'=> '0']);
+        return back();
+      }
+
+
+      
+
 }

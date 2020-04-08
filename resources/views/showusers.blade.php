@@ -9,7 +9,11 @@
        <td>First Name</td>
        <td>last Name</td>
        <td>Email</td>
+       <td>Ban_User</td>
+       <td>Un_BanUser</td>
+
        <td>Action</td>
+
        </tr>
        @foreach ($users as $user)
        <tr>
@@ -18,6 +22,8 @@
        <td>{{ $user->fname }}</td>
        <td>{{ $user->lname }}</td>
        <td>{{ $user->email }}</td>
+       <td> <a href='/BanUser/{{ $user->id }}'>Ban</a></td>
+       <td> <a href='/UnBanUser/{{ $user->id }}'>UnBan</a></td>
        <td> <a href='/deleteUser/{{ $user->id }}'>Delete</a></td>
        </tr>
        @endforeach

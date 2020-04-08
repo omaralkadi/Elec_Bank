@@ -33,6 +33,9 @@ Route::post('adduser','Acontroller@add');
 
 Route::get('showusers','Acontroller@showusers');
 Route::get('/deleteUser/{id}','Acontroller@deleteUser');
+Route::get('/BanUser/{id}','Acontroller@BanUser');
+
+Route::get('/UnBanUser/{id}','Acontroller@UnBanUser');
 
 Route::get('feedback','Feedback@get_feedback');
 
