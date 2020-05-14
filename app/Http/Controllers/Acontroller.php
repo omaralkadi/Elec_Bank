@@ -12,16 +12,31 @@ class Acontroller extends Controller
 
     public function __construct()
     {
-       #$this->middleware('auth');
+       $this->middleware('auth');
     }
 
     public function show()
     {
+      if (!Auth::guest() && Auth::user()->group_id ==1)
+      {
         return view('adduserform');
+      }
+      else
+      return redirect('home');
+        
     }
+
 
     public function add(Request $request)
     {
+         $validation=$request->validate([
+          'firstname'=> 'required',
+          'lastname'=>'required',
+          'password'=>'required',
+          'username'=>'required',
+          'email'=>'required'
+        ]);
+        
         $user=new users;
         $user->fname=$request->firstname;
         $user->lname=$request->lastname;
@@ -30,14 +45,18 @@ class Acontroller extends Controller
         $user->password=Hash::make($request->password);
         #$user->group_id='0'; by default
         $user->save();
-        return back();
+        return redirect('/showusers');
     }
 
     public function showusers(request $request)
     {
- 
+        if (!Auth::guest() && Auth::user()->group_id ==1)
+      {
         $users=DB::table('users')->get();         
         return view('showusers',compact('users'));
+      }
+      else
+      return redirect('home');
     }
     
     public static function deleteUser($id){
@@ -45,5 +64,4 @@ class Acontroller extends Controller
         DB::table('users')->where('id', '=', $id)->delete();
         return back();
       }
-
 }

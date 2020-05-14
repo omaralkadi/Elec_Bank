@@ -23,6 +23,8 @@ class CreateUsersTable extends Migration
             $table->timestamp('email_verified_at')->nullable();
             $table->string('password');
             $table->integer('group_id')->default(0);
+            $table->Boolean('isBan')->default(0);
+            $table->double('money')->default(0);
             $table->rememberToken();
             $table->timestamps();
         });

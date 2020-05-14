@@ -21,7 +21,7 @@ class UpdateData extends Controller
         $user->email    = $request->input('email');
         $user->update();
 		//echo '<script type="text/javascript">alert("Changes saved")</script>';
-        return redirect('/updateuser')->with('sucess','User Info Updated');
+        return redirect('/showusers')->with('sucess','User Info Updated');
     	}
     	
 }

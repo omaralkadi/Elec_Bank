@@ -1,5 +1,18 @@
 @extends("layouts.app")
 @section("content")
+
+
+
+
+      @if(count($errors)>0)
+        @foreach($errors->all() as $error)
+
+        <p class="alert alert-danger">{{$error}}</p>
+
+        @endforeach
+
+      @endif  
+      
         <div style='margin-left:100px'> 
 
         <form method="POST" style='margin-top:100px' action="adduser">
