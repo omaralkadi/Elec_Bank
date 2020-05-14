@@ -39,3 +39,7 @@ Route::get('feedback','Feedback@get_feedback');
 Auth::routes(['register' =>false]);
 Route::get('/home', 'HomeController@index')->name('home');
 
+Route::get('/BanUser/{id}','Acontroller@BanUser');
+
+Route::get('/UnBanUser/{id}','Acontroller@UnBanUser');
+
