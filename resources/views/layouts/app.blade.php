@@ -69,7 +69,7 @@
                                 <a id="navbarDropdown" class="nav-link " href="updateuser" role="button"  aria-haspopup="true" aria-expanded="false" v-pre>
                                   Update Accounts <span class="caret"></span>
                                 </a>
-                                <a id="navbarDropdown" class="nav-link " href="#" role="button"  aria-haspopup="true" aria-expanded="false" v-pre>
+                                <a id="navbarDropdown" class="nav-link " href="transfer_show" role="button"  aria-haspopup="true" aria-expanded="false" v-pre>
                                   Transfer <span class="caret"></span>
                                 </a>
                                 </div>

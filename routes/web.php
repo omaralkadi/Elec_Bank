@@ -42,3 +42,6 @@ Route::get('feedback','Feedback@get_feedback');
 Auth::routes(['register' =>false]);
 Route::get('/home', 'HomeController@index')->name('home');
 
+
+
+

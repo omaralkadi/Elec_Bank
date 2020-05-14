@@ -12,12 +12,18 @@ class Acontroller extends Controller
 
     public function __construct()
     {
-       #$this->middleware('auth');
+       $this->middleware('auth');
     }
 
     public function show()
     {
+      if (!Auth::guest() && Auth::user()->group_id ==1)
+      {
         return view('adduserform');
+      }
+      else
+      return redirect('home');
+        
     }
 
     public function add(Request $request)
@@ -35,9 +41,13 @@ class Acontroller extends Controller
 
     public function showusers(request $request)
     {
- 
+        if (!Auth::guest() && Auth::user()->group_id ==1)
+      {
         $users=DB::table('users')->get();         
         return view('showusers',compact('users'));
+      }
+      else
+      return redirect('home');
     }
     
     public static function deleteUser($id){
@@ -57,8 +67,6 @@ class Acontroller extends Controller
         DB::table('users')->where('id', '=', $id)->update(['users.isBan'=> '0']);
         return back();
       }
-
-
-      
-
+        
+      }
 }
