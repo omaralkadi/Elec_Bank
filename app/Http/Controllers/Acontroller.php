@@ -78,19 +78,7 @@ class Acontroller extends Controller
       }
 
 
-      public function transfer_show(request $request)
-      {
-        if (!Auth::guest() && Auth::user()->group_id ==1)
-        {
-
-          $users=DB::table('users')->get();
-          return view('transfer',compact('users'));
-        }
-        else
-        return redirect('home');
-
-
-      }
+    
 
       public function transfermoney(Request $request){
 
