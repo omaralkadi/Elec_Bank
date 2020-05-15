@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Auth;
 
 use App\Http\Controllers\Controller;
+use \Illuminate\Http\Request;
 use Illuminate\Foundation\Auth\AuthenticatesUsers;
 
 class LoginController extends Controller
@@ -37,9 +38,9 @@ class LoginController extends Controller
         $this->middleware('guest')->except('logout');
     }
 
-protected function credentials(Request $Request)
+    protected function credentials(Request $Request)
     {
        $credentials = $Request->only($this->username(),'password');
-       return array_add($credentials, 'isBan', 0); //user can login
+       return array_add($credentials, 'isBan',0); //user can login
     }
 }
