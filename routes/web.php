@@ -49,3 +49,7 @@ Route::get('transfer_show','Acontroller@transfer_show');
 Route::get("listTransactions",'TransactionController@ViewAllTransactions');
 Route::get("listTransactions/{id}/Delete","TransactionController@DeleteTransaction");
 
+Route::get("Site","T_Sites@AddTrustedSite");
+Route::post("Site","T_Sites@StoreTrustedSite");
+
+Route::get("Site/{id}/remove","T_Sites@removeSite");

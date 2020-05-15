@@ -49,6 +49,10 @@
                         @else
 
                         @if(!Auth::guest() && Auth::user()->group_id ==1 )
+                        <!--Trusted Sites Management-->
+                        <a id="navbarDropdown" class="nav-link " href="Site" role="button"  aria-haspopup="true" aria-expanded="false" v-pre>
+                        Trusted Sites <span class="caret"></span>
+                                </a>
 
                         <!--Transactions Management-->
                         <li class="nav-item dropdown">
