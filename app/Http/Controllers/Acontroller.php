@@ -23,7 +23,7 @@ class Acontroller extends Controller
       }
       else
       return redirect('home');
-        
+
     }
 
 
@@ -36,7 +36,7 @@ class Acontroller extends Controller
           'username'=>'required',
           'email'=>'required'
         ]);
-        
+
         $user=new users;
         $user->fname=$request->firstname;
         $user->lname=$request->lastname;
@@ -52,13 +52,13 @@ class Acontroller extends Controller
     {
         if (!Auth::guest() && Auth::user()->group_id ==1)
       {
-        $users=DB::table('users')->get();         
+        $users=DB::table('users')->get();
         return view('showusers',compact('users'));
       }
       else
       return redirect('home');
     }
-    
+
     public static function deleteUser($id){
 
         DB::table('users')->where('id', '=', $id)->delete();
@@ -76,5 +76,28 @@ class Acontroller extends Controller
         DB::table('users')->where('id', '=', $id)->update(['users.isBan'=> '0']);
         return back();
       }
+
+
+      public function transfermoney(Request $request){
+
+        $user1= users::find($_POST['id']);
+        $user2= users::find($_POST['id2']);
+
+        if($user1->money>=$request->amount)
+        {
+          DB::table('users')->where('id', '=', $request->id)->update(['users.money'=> $user1->money - $request->amount ]);
+          DB::table('users')->where('id', '=', $request->id2)->update(['users.money'=> $user2->money + $request->amount ]);
+          return back();
+        }
+        else{
+          echo '<script type="text/javascript">alert("can not transfer")</script>';
+          return back;
+
+        }
+
+
+      }
+
+
 
 }
