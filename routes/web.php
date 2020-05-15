@@ -45,3 +45,7 @@ Route::get('/UnBanUser/{id}','Acontroller@UnBanUser');
 
 Route::post('transfer','Acontroller@transfermoney');
 Route::get('transfer_show','Acontroller@transfer_show');
+
+Route::get("listTransactions",'TransactionController@ViewAllTransactions');
+Route::get("listTransactions/{id}/Delete","TransactionController@DeleteTransaction");
+

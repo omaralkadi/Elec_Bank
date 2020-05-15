@@ -101,6 +101,14 @@ class Acontroller extends Controller
         {
           DB::table('users')->where('id', '=', $request->id)->update(['users.money'=> $user1->money - $request->amount ]);
           DB::table('users')->where('id', '=', $request->id2)->update(['users.money'=> $user2->money + $request->amount ]);
+          DB::table('transaction')->insert(
+            array(
+            'FromUserId' => $request->id,
+              'ToUserId' =>  $request->id2,
+              'Amount' => $request->amount,
+              'created_at' =>\Carbon\Carbon::now(),
+            )
+          );
           return back();
         }
         else{
