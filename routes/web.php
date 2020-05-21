@@ -35,6 +35,7 @@ Route::get('showusers','Acontroller@showusers');
 Route::get('/deleteUser/{id}','Acontroller@deleteUser');
 
 Route::get('feedback','Feedback@get_feedback');
+Route::get('/deleteFeedback/{id}','Feedback@deleteFeedback');
 
 Auth::routes(['register' =>false]);
 Route::get('/home', 'HomeController@index')->name('home');

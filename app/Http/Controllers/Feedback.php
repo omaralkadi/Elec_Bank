@@ -17,4 +17,10 @@ class Feedback extends Controller
       return view('feedback',compact('feedback'));
   }
 
+  public static function deleteFeedback($id){
+
+    DB::table('feedback')->where('id', '=', $id)->delete();
+    return back();
+  }
+
 }

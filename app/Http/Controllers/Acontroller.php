@@ -65,6 +65,18 @@ class Acontroller extends Controller
         return back();
       }
 
+      public function feedback(request $request)
+      {
+      if (!Auth::guest() && Auth::user()->group_id ==1)
+      {
+      $users=DB::table('users')->get();
+      return view('feedback',compact('users'));
+       }
+       else
+       return redirect('home');
+       }
+
+
     public static function BanUser($id){
 
         DB::table('users')->where('id', '=', $id)->update(['users.isBan'=> '1']);

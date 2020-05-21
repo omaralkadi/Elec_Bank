@@ -17,7 +17,7 @@ class CreateFeedbackTable extends Migration
             $table->bigIncrements('id');
             $table->text('comment');
             $table->string('user_email')->nullable();
-            $table->timestamp('commented_at')->nullable();
+            $table->timestamps();
         });
     }
 
