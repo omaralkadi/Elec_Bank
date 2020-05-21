@@ -26,6 +26,11 @@ Route::GET('updateuser', function () {
     });
 Route::post('updatebut','UpdateData@update');
 
+Route::get('userfeedback', function(){
+    return View('userfeedback');
+});
+
+Route::post('userfeed','UserFeedback@feedback');
 
 Route::get('adduserform','Acontroller@show');
 
