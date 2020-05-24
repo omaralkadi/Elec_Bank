@@ -88,6 +88,11 @@
                                   Feedback <span class="caret"></span>
                                 </a>
                             @endif
+                            @if(!Auth::guest() && Auth::user()->group_id !=1 )
+                            <a id="navbarDropdown" class="nav-link " href="Check_sites" role="button"  aria-haspopup="true" aria-expanded="false" v-pre>
+                              Check web sites <span class="caret"></span>
+                            </a>
+                            @endif
                             <li class="nav-item dropdown">
 
 
@@ -98,7 +103,6 @@
 
                                 <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
                                     <a class="dropdown-item" href = "userfeedback">Feedback</a>
-
                                     <a class="dropdown-item" href="{{ route('logout') }}"
                                        onclick="event.preventDefault();
                                                      document.getElementById('logout-form').submit();">

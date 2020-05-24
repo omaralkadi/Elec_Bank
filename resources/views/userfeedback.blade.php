@@ -1,6 +1,5 @@
-@extends("layouts.app")
-@section("content")
-
+@extends('layouts.app')
+@section('content')
 
 	<form method="POST" action = "userfeed">
 				{{csrf_field()}}
@@ -12,4 +11,4 @@
                 <input type="email" required name="email" style="position: relative;left: 45px"><br>
                 <button type="submit" style="height: 30px;color: white;background-color: black;position: relative;top: 10px;width: 300px;left: 10px;">Submit</button>
 	</form>
-
+@stop

@@ -15,11 +15,11 @@ class T_Sites extends Controller
 
     public function StoreTrustedSite(Request $request)
     {
-        $pattern = '/\b.\b/'; 
+        $pattern = '/\b.\b/';
             $validation=$request->validate([
                 'Trusted_Site'=> 'required'
               ]);
-            
+
             $site = new trused_web_sites;
             $site->Site = $request->Trusted_Site;
             $site->save();
@@ -40,7 +40,13 @@ class T_Sites extends Controller
             }
         }
         return redirect("Site");
-       
-        
+
+
+    }
+    public function search_web(request $request)
+    {
+      
+        $sites = DB::table("trused_web_sites")->where("Site",$request->check_web_site)->get();
+        return view("view_check", compact("sites"));
     }
 }
