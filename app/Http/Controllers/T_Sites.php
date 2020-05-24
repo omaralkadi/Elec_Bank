@@ -49,4 +49,22 @@ class T_Sites extends Controller
         $sites = DB::table("trused_web_sites")->where("Site",$request->check_web_site)->get();
         return view("view_check", compact("sites"));
     }
+
+    public function EditeSite($id)
+    {
+        $sites = DB::table("trused_web_sites")->where("id","=",$id)->get();
+        return view("EditedSite", compact("sites"));
+
+    }
+    public function EditeSiteStore(request $request, $id)
+    {
+        
+
+        DB::table('trused_web_sites')
+              ->where('id', $id)
+              ->update(['Site' => $request->NewT]);
+
+        return redirect("Site");
+
+    }
 }

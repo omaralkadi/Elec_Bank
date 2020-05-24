@@ -59,6 +59,8 @@ Route::get("Site","T_Sites@AddTrustedSite");
 Route::post("Site","T_Sites@StoreTrustedSite");
 
 Route::get("Site/{id}/remove","T_Sites@removeSite");
+Route::get("Site/{id}/edite","T_Sites@EditeSite");
+Route::post("Site/{id}/edite","T_Sites@EditeSiteStore");
 
 Route::get('Check_sites', function(){
      return View('check_web');
