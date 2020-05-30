@@ -66,3 +66,5 @@ Route::get('Check_sites', function(){
      return View('check_web');
 });
 Route::post("Check_sites","T_Sites@search_web");
+Route::get('balance_show','Acontroller@balance_show');
+Route::post('balancee','Acontroller@balance_get');

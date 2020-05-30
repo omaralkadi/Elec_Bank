@@ -132,6 +132,26 @@ class Acontroller extends Controller
 
       }
 
+      public function balance_show(request $request)
+        {
+        $users=DB::table('users')->get();
+        return view('balancee',compact('users'));
+        }
 
+        public function balance_get(Request $request){
+
+        $user= users::find($_POST['id']);
+        if($user)
+        {
+          $m=$user->money;
+          return view('balance_value',compact('m'));
+        }
+        else
+        {
+          return redirect('/balance_show');
+
+        }
+
+         }
 
 }
