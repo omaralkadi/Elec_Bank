@@ -30,7 +30,7 @@ Route::get('userfeedback', function(){
     return View('userfeedback');
 });
 
-Route::post('userfeed','UserFeedback@feedback');
+Route::post('userfeed','AddFeedBack@addfeedback');
 
 Route::get('adduserform','Acontroller@show');
 
