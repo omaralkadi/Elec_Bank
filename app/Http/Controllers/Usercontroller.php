@@ -1,13 +1,15 @@
 <?php
 
 namespace App\Http\Controllers;
+use Flash;
 use DB;
 use App\users;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
 
-class Acontroller extends Controller
+
+class Usercontroller extends Controller
 {
 
     public function __construct()
@@ -89,69 +91,24 @@ class Acontroller extends Controller
         return back();
       }
 
-      public function transfer_show(request $request)
+
+      public function UpdateUserView($id)
       {
-        if (!Auth::guest() && Auth::user()->group_id ==1)
-        {
-
-          $users=DB::table('users')->get();
-          return view('transfer',compact('users'));
-        }
-        else
-        return redirect('home');
-
-
+          $user = DB::table("users")->where("id","=",$id)->get();
+          return view("updateuser", compact("user"));
+  
       }
+                  
 
+        public function UpdateUser(Request $request,$id) {
 
-      public function transfermoney(Request $request){
+          DB::table('users')
+              ->where('id', $id)
+              ->update(['fname' => $request->firstname,'lname'=>$request->lastname,'email'=>$request->Email
+              ,'username'=>$request->username,'money'=>$request->Balance,'password'=>Hash::make($request->password)]);
 
-        $user1= users::find($_POST['id']);
-        $user2= users::find($_POST['id2']);
+          return redirect("showusers");
+          }
 
-        if($user1->money>=$request->amount)
-        {
-          DB::table('users')->where('id', '=', $request->id)->update(['users.money'=> $user1->money - $request->amount ]);
-          DB::table('users')->where('id', '=', $request->id2)->update(['users.money'=> $user2->money + $request->amount ]);
-          DB::table('transaction')->insert(
-            array(
-            'FromUserId' => $request->id,
-              'ToUserId' =>  $request->id2,
-              'Amount' => $request->amount,
-              'created_at' =>\Carbon\Carbon::now(),
-            )
-          );
-          return back();
-        }
-        else{
-          echo '<script type="text/javascript">alert("can not transfer")</script>';
-          return back;
-
-        }
-
-
-      }
-
-      public function balance_show(request $request)
-        {
-        $users=DB::table('users')->get();
-        return view('balancee',compact('users'));
-        }
-
-        public function balance_get(Request $request){
-
-        $user= users::find($_POST['id']);
-        if($user)
-        {
-          $m=$user->money;
-          return view('balance_value',compact('m'));
-        }
-        else
-        {
-          return redirect('/balance_show');
-
-        }
-
-         }
-
+      
 }

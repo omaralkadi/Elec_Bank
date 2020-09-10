@@ -6,7 +6,7 @@
 	<form method="POST" action = "transfer">
 				{{ csrf_field() }}
 				<label style="position: relative;left: 10px">transfer from :</label>
-                <input type="text"  placeholder= "enter id" required id = "id" name="id" style="position: relative;left: 70px"><br>
+                <input type="text" value="{{$user->id}}" required id = "id" name="id" style="position: relative;left: 70px"><br>
 
                 <label style="position: relative;left: 10px">transfer to :</label>
                 <input type="text"  placeholder= "enter id" required id = "id2" name="id2" style="position: relative;left: 85px"><br>

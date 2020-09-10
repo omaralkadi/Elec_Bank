@@ -15,42 +15,31 @@ Route::get('/', function () {
     return redirect('login');
 });
 
-Route::GET('updateuser', function () {
-    if (!Auth::guest() && Auth::user()->group_id ==1)
-        return view('updateuser');
-    else
-    {
-        return redirect("home");
-    }
 
-    });
-Route::post('updatebut','UpdateData@update');
+Route::get("UpdateUser/{id}/edite","Usercontroller@UpdateUserView");
 
-Route::get('userfeedback', function(){
-    return View('userfeedback');
-});
+Route::post("UpdateUser/{id}/edite","Usercontroller@UpdateUser");
 
-Route::post('userfeed','AddFeedBack@addfeedback');
+Route::get('userfeedback','userfeedback@show');
+Route::post('userfeed','userfeedback@addfeedback');
 
-Route::get('adduserform','Acontroller@show');
+Route::get('adduserform','Usercontroller@show');
+Route::post('adduser','Usercontroller@add');
 
-Route::post('adduser','Acontroller@add');
+Route::get('showusers','Usercontroller@showusers');
+Route::get('/deleteUser/{id}','Usercontroller@deleteUser');
 
-Route::get('showusers','Acontroller@showusers');
-Route::get('/deleteUser/{id}','Acontroller@deleteUser');
-
-Route::get('feedback','Feedback@get_feedback');
-Route::get('/deleteFeedback/{id}','Feedback@deleteFeedback');
+Route::get('feedback','userfeedback@get_feedback');
+Route::get('/deleteFeedback/{id}','userfeedback@deleteFeedback');
 
 Auth::routes(['register' =>false]);
 Route::get('/home', 'HomeController@index')->name('home');
 
-Route::get('/BanUser/{id}','Acontroller@BanUser');
+Route::get('/BanUser/{id}','Usercontroller@BanUser');
+Route::get('/UnBanUser/{id}','Usercontroller@UnBanUser');
 
-Route::get('/UnBanUser/{id}','Acontroller@UnBanUser');
-
-Route::post('transfer','Acontroller@transfermoney');
-Route::get('transfer_show','Acontroller@transfer_show');
+Route::post('transfer','TransactionController@transfermoney');
+Route::get('transfer_show','TransactionController@transfer_show');
 
 Route::get("listTransactions",'TransactionController@ViewAllTransactions');
 Route::get("listTransactions/{id}/Delete","TransactionController@DeleteTransaction");
@@ -66,5 +55,5 @@ Route::get('Check_sites', function(){
      return View('check_web');
 });
 Route::post("Check_sites","T_Sites@search_web");
-Route::get('balance_show','Acontroller@balance_show');
-Route::post('balancee','Acontroller@balance_get');
+Route::get('balance_show','TransactionController@balance_show');
+Route::post('balancee','TransactionController@balance_get');

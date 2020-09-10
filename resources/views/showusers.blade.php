@@ -15,7 +15,8 @@
           <td>IsBan</td>
           <td>Ban_User</td>
           <td>Un_BanUser</td>
-          <td>Action</td>
+          <td>Delete User</td>
+          <td>Update User</td>
        </tr>
     <thead class="thead-dark">
        @foreach ($users as $user)
@@ -30,6 +31,7 @@
           <td> <a class="btn btn-default btn-sm" href='/BanUser/{{ $user->id }}'>Ban</a></td>
           <td> <a class="btn btn-default btn-sm" href='/UnBanUser/{{ $user->id }}'>UnBan</a></td>
           <td> <a class="btn btn-default btn-sm"  href='/deleteUser/{{ $user->id }}'>Delete</a></td>
+          <td> <a class="btn btn-default btn-sm"  href='/UpdateUser/{{ $user->id }}/edite'>Update</a></td>
        </tr>
        @endforeach
     </table>

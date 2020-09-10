@@ -20,7 +20,6 @@
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
 
-}
 </head>
 <body>
     <div id="app">
@@ -53,6 +52,10 @@
                         <a id="navbarDropdown" class="nav-link " href="Site" role="button"  aria-haspopup="true" aria-expanded="false" v-pre>
                         Trusted Sites <span class="caret"></span>
                                 </a>
+                        <!--show Balance Management-->
+                        <a id="navbarDropdown" class="nav-link " href="balance_show" role="button"  aria-haspopup="true" aria-expanded="false" v-pre>
+                        Show Balance <span class="caret"></span>
+                        </a>        
 
                         <!--Transactions Management-->
                         <li class="nav-item dropdown">
@@ -76,22 +79,23 @@
                                     New Account <span class="caret"></span>
                                     </a>
                                     <a id="navbarDropdown" class="nav-link " href="showusers" role="button"  aria-haspopup="true" aria-expanded="false" v-pre>
-                                    View Accounts<span class="caret"></span>
-                                    </a>
-                                    <a id="navbarDropdown" class="nav-link " href="updateuser" role="button"  aria-haspopup="true" aria-expanded="false" v-pre>
-                                    Update Accounts <span class="caret"></span>
+                                    Account details<span class="caret"></span>
                                     </a>
 
                                 </div>
                             </li>
                                 <a id="navbarDropdown" class="nav-link " href="feedback" role="button"  aria-haspopup="true" aria-expanded="false" v-pre>
-                                  Feedback <span class="caret"></span>
+                                  Feedbacks <span class="caret"></span>
                                 </a>
                             @endif
                             @if(!Auth::guest() && Auth::user()->group_id !=1 )
                             <a id="navbarDropdown" class="nav-link " href="Check_sites" role="button"  aria-haspopup="true" aria-expanded="false" v-pre>
                               Check web sites <span class="caret"></span>
                             </a>
+
+                            <a id="navbarDropdown" class="nav-link " href="balance_show" role="button"  aria-haspopup="true" aria-expanded="false" v-pre>
+                              Show Balance <span class="caret"></span>
+                             </a>   
                             @endif
                             <li class="nav-item dropdown">
 
@@ -102,7 +106,7 @@
 
 
                                 <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
-                                    <a class="dropdown-item" href = "userfeedback">Feedback</a>
+                                    <a class="dropdown-item" href = "userfeedback">Add Feedback</a>
                                     <a class="dropdown-item" href="{{ route('logout') }}"
                                        onclick="event.preventDefault();
                                                      document.getElementById('logout-form').submit();">

@@ -13,7 +13,8 @@
 
 <ul class="list-group" style="width:1200px;margin-left:30px;">
 @foreach($sites as $s)
-    <li class="list-group-item" >{{$s->Site}} <a href="Site/{{$s->id}}/remove" style="float:right">Remove</a><a href="Site/{{$s->id}}/edite" style="float:right">edite</a></li>  
+    <li class="list-group-item" >{{$s->Site}} <a href="Site/{{$s->id}}/remove" style="float:right">Remove</a> 
+     <a href="Site/{{$s->id}}/edite" style="float:right">edite</a></li>  
 
   @endforeach
   </ul>
