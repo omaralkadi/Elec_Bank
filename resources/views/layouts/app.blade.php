@@ -95,11 +95,11 @@
 
                             <a id="navbarDropdown" class="nav-link " href="balance_show" role="button"  aria-haspopup="true" aria-expanded="false" v-pre>
                               Show Balance <span class="caret"></span>
-                             </a>   
+                             </a>  
+                             <a id="navbarDropdown" class="nav-link " href="transfer_show" role="button" aria-haspopup="true" aria-expanded="false" v-pre>
+                                Balace transfer <span class="caret"></span>
+                             </a> 
                             @endif
-                            <a id="navbarDropdown" class="nav-link " href="transfer_show" role="button"  aria-haspopup="true" aria-expanded="false" v-pre>
-                              Balance Transfer <span class="caret"></span>
-                            </a>
                             
                             <li class="nav-item dropdown">
 
