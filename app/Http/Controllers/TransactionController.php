@@ -23,14 +23,9 @@ class TransactionController extends Controller
 
     public function transfer_show(request $request)
     {
-      if (!Auth::guest() && Auth::user()->group_id ==1)
-      {
+     
         $user = auth()->user();
         return view('transfer',compact('user'));
-      }
-      else
-      return redirect('home');
-
 
     }
 

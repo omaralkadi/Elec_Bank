@@ -97,6 +97,10 @@
                               Show Balance <span class="caret"></span>
                              </a>   
                             @endif
+                            <a id="navbarDropdown" class="nav-link " href="transfer_show" role="button"  aria-haspopup="true" aria-expanded="false" v-pre>
+                              Balance Transfer <span class="caret"></span>
+                            </a>
+                            
                             <li class="nav-item dropdown">
 
 
