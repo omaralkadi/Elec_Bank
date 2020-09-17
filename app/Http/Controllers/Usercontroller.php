@@ -102,6 +102,12 @@ class Usercontroller extends Controller
 
         public function UpdateUser(Request $request,$id) {
 
+          $validation=$request->validate([
+
+            'repassword' => 'same:password'
+
+          ]);
+
           DB::table('users')
               ->where('id', $id)
               ->update(['fname' => $request->firstname,'lname'=>$request->lastname,'email'=>$request->Email

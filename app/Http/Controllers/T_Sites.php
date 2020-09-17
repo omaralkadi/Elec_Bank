@@ -56,6 +56,7 @@ class T_Sites extends Controller
         return view("EditedSite", compact("sites"));
 
     }
+    
     public function EditeSiteStore(request $request, $id)
     {
         

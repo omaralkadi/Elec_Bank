@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use DB;
 use App\users;
+use Redirect;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
 class TransactionController extends Controller
@@ -35,6 +36,13 @@ class TransactionController extends Controller
       $user1= users::find($_POST['id']);
       $user2= users::find($_POST['id2']);
 
+      $validation=$request->validate([
+
+        'amount' =>'required|integer|min:0',
+        'id2' =>'exists:users,id|different:id',
+      ]
+    );
+
       if($user1->money>=$request->amount)
       {
         DB::table('users')->where('id', '=', $request->id)->update(['users.money'=> $user1->money - $request->amount ]);
@@ -47,14 +55,11 @@ class TransactionController extends Controller
             'created_at' =>\Carbon\Carbon::now(),
           )
         );
-        return back();
+        return redirect()->back()->with('success', ' transferring done successfully');   
       }
       else{
-        echo '<script type="text/javascript">alert("can not transfer")</script>';
-        return back;
-
+        return redirect()->back()->with('faild', ' transferring can not done');
       }
-
 
     }
 

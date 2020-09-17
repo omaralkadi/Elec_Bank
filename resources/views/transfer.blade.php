@@ -1,6 +1,32 @@
 @extends("layouts.app")
 @section("content")
 
+@if(count($errors)>0)
+        @foreach($errors->all() as $error)
+
+        <p class="alert alert-danger">{{$error}}</p>
+
+        @endforeach
+
+     @endif
+
+     @if (\Session::has('success'))
+    <div class="alert alert-success">
+        <ul>
+            <li>{!! \Session::get('success') !!}</li>
+        </ul>
+    </div>
+      @endif
+
+      @if (\Session::has('faild'))
+    <div class="alert alert-danger">
+        <ul>
+            <li>{!! \Session::get('faild') !!}</li>
+        </ul>
+    </div>
+      @endif
+
+
 	<h2>Transfer Money</h2>
     <br>
 	<form method="POST" action = "transfer">
@@ -13,7 +39,7 @@
 
 
                 <label style="position: relative;left: 10px">money amount</label>
-                <input type="number" min="0.00001" step="0.01" required amount="amount" placeholder="must be positive number" name="amount" style="position: relative;left: 62px"><br   >
+                <input type="number"  placeholder="must be positive number" name="amount" style="position: relative;left: 62px"><br   >
 
                 <button type="submit" style="height: 30px;color: white;background-color: black;position: relative;top: 10px;width: 300px;left: 10px;">transfer</button>
     </form>
